@@ -1,0 +1,103 @@
+@@ -1,34 +1,5 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+
+@ashishrajak 
+Iqrakhan1
+/
+iqrakhan1
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+1
+Security
+Insights
+iqrakhan1/AI (artificial intelligence lab ) experiment/WAP in turbo prolog for medical diagnosis and show t he advantage and disadvantage of green and red cuts
+@Iqrakhan1
+Iqrakhan1 Create WAP in turbo prolog for medical diagnosis and show t he advant…
+…
+Latest commit 0b86e9b 36 minutes ago
+ History
+ 1 contributor
+58 lines (56 sloc)  1.35 KB
+
+: WAP in turbo prolog for medical diagnosis and show t he 
+advantage and disadvantage of green and red cuts
+
+
+
+Program:
+Domains: 
+disease,indication=symbol 
+name-string
+Predicates: 
+hypothesis(name,disease) 
+symptom(name,indication) 
+response(char)
+go 
+goonce
+clauses 
+go:-
+goonce
+write("will you like to try again (y/n)?"), 
+response(Reply),
+Reply='n'. 
+go. 
+goonce:-
+write("what is the patient's name"),nl, 
+readln(Patient), 
+hypothesis(Patient,Disease),!, 
+write(Patient,"probably has",Disease),!, 
+goonce:-
+write("sorry, i am not ina position to diagnose"), 
+write("the disease").
+symptom(Patient,fever):-
+write("does",Patient,"has a fever (y/n)?"),nl, 
+response(Reply),
+Reply='y',nl. 
+symptom(Patient,rash):-
+write ("does", Patient,"has a rash (y/n)?" ),nl, 
+response(Reply),
+Reply='y', 
+symptom(Patient_body,ache):-
+write("does",Patient,"has a body ache (y/n)?"),nl, 
+response(Reply).
+Reply='y',nl. 
+symptom(Patient,runny_nose):-
+write("does",Patient,"has a runny_nose (y/n)?"), 
+response(Reply),
+Reply='y' 
+hypothesis(Patient,flu):-
+symptom(Patient,fever), 
+symptom(Patient,body_ache),
+hypothesis(Patient,common_cold):-
+symptom(Patient,body_ache), 
+Symptom(Patient,runny_nose). 
+response(Reply):-
+readchar(Reply), 
+write(Reply).
+Output:
+makewindow(1,7,7"Expert Medical Diagnosis",2,2,23,70), 
+go.
+OUTCOME: Student will understand how to create a expert system using prolog
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
